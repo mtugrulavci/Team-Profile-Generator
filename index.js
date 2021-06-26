@@ -2,6 +2,7 @@
 const { log } = require('console');
 const fs = require('fs');
 const inquirer = require('inquirer');
+const Employee = require('./lib/Employee.js');
 
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
@@ -49,7 +50,7 @@ const questions = [
             console.log('Please enter employee id!');
             return false;
           }
-          
+
         }
       },
       {
@@ -125,17 +126,18 @@ const promptEmployee = ()=>{
 
       return inquirer.prompt(questions)
       .then(employeeData => {
-          let {name, id, email, github, school,officeNumber} = employeeData;
+          let {name, id, email, github, school, officeNumber} = employeeData;
+          let employee;
         if (employeeData.role === 'Manager'){ 
-            let employee = new Manager(name, id, email, officeNumber);
+           employee = new Manager(name, id, email, officeNumber);
         }
         if (employeeData.role === 'Engineer'){ 
-            let employee = new Engineer(name, id, email, github)
+            employee = new Engineer(name, id, email, github)
         }
         if (employeeData.role === 'Intern'){ 
-            let employee = new Intern(name, id, email, school)
+             employee = new Intern(name, id, email, school)
         }
-        employeeArr.push(employeeData);
+        employeeArr.push(employee);
 
         if (employeeData.confirmAddEmployee) {
           return promptEmployee(employeeArr);
