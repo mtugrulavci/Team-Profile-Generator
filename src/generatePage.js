@@ -1,6 +1,6 @@
 
 
-const generatePage = (data) => {
+const generatePage = employeeArr => {
     return `
     <!DOCTYPE html> 
     <html lang="en"> 
@@ -10,7 +10,8 @@ const generatePage = (data) => {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Portfolio Demo</title>
     </head>
-  
+    ${generatePage(name)}
+ 
     <body>
       <h1></h1>
 
