@@ -1,0 +1,25 @@
+body{
+
+    font-size: 22px;
+
+}
+
+header{
+    background-color:green;
+    margin: 30px;
+
+}
+
+.dist {
+
+    margin: auto;
+    display: inline-block;
+    margin-left: 60px;
+
+}
+h1{
+    font-size: 36px;
+
+    color: honeydew;
+
+}
