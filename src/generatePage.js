@@ -51,23 +51,23 @@ const internHTML = intern => {
 }
 const generatePage = employeeArr => {
     empList = [];
-    for (let i = 0; employeeArr.length>i; i++){
+    for (let i = 0; employeeArr.length>i; i++){ // gets the employeeArray and loops it to get the role
         const role = employeeArr[i].getRole();
 
 
-        if (role === 'Manager'){
+        if (role === 'Manager'){ // if the role is Manager then push the Manager HTML chunk for manager
             empList.push(managerHTML(employeeArr[i]));
         }
-        if (role === 'Engineer'){
+        if (role === 'Engineer'){ // if the role is Manager then push the Manager HTML chunk for Engineer
             empList.push(engineerHTML(employeeArr[i]));
         }
-        if (role === 'Intern'){
+        if (role === 'Intern'){ // if the role is Manager then push the Manager HTML chunk for Intern
             empList.push(internHTML(employeeArr[i]));
         }
     }
-    const  mergedTeam = empList.join(''); 
+    const  mergedTeam = empList.join(''); //joins the array together and put into HMTLPage function
     const  printHTML =  HTMLPage(mergedTeam);
-    return printHTML;
+    return printHTML; // this is the complete page to be written on index.html
 
 
 }
