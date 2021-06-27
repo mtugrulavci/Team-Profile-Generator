@@ -118,15 +118,15 @@ const promptEmployee = ()=>{
 
       return inquirer.prompt(questions)
       .then(employeeData => {
-          let {name, id, email, github, school, officeNumber} = employeeData;
+          let {role, name, id, email, github, school, officeNumber} = employeeData;
           let employee;
-        if (employeeData.role === 'Manager'){ 
+        if (role === 'Manager'){ 
            employee = new Manager(name, id, email, officeNumber);
         }
-        if (employeeData.role === 'Engineer'){ 
+        if (role === 'Engineer'){ 
             employee = new Engineer(name, id, email, github)
         }
-        if (employeeData.role === 'Intern'){ 
+        if (role === 'Intern'){ 
              employee = new Intern(name, id, email, school)
         }
         employeeArr.push(employee);
@@ -134,10 +134,10 @@ const promptEmployee = ()=>{
         if (employeeData.confirmAddEmployee) {
           return promptEmployee(employeeArr);
         } else {
-          return employeeArr, console.log(employeeArr);
+          return employeeArr;
         }
-      });
-    }
+      })
+    };
     
 const writeFile = fileContent => {
       fs.writeFile('./dist/index.html', fileContent, err => {
@@ -156,8 +156,8 @@ const writeFile = fileContent => {
 
 
 //const questions = 
-promptEmployee().then(employeeData =>{
-    return generatePage(employeeData);
+promptEmployee().then(employeeArr =>{
+    return generatePage(employeeArr);
 }).then(pageHTML => {
     return writeFile(pageHTML);
   })
