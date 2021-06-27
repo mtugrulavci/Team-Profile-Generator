@@ -89,7 +89,7 @@ const questions = [
       },
       {
         type: 'input',
-        name: 'schoolName',
+        name: 'school',
         message: 'Please enter your school name?',
         when:(input) => input.role ==='Intern',
         validate: nameInput => {
@@ -112,7 +112,7 @@ const questions = [
 const promptEmployee = ()=>{
     console.log(`
   =================
-  Add a New Project
+  Add a New Employee
   =================
   `);
 
