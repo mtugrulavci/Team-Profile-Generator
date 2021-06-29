@@ -66,8 +66,7 @@ const generatePage = employeeArr => {
         }
     }
     const  mergedTeam = empList.join(''); //joins the array together and put into HMTLPage function
-    const  printHTML =  HTMLPage(mergedTeam);
-    return printHTML; // this is the complete page to be written on index.html
+    return HTMLPage(mergedTeam); // this is the complete page to be written on index.html
 
 
 }
