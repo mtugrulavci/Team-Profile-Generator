@@ -52,7 +52,7 @@ const internHTML = intern => {
 const generatePage = employeeArr => {
     empList = [];
     for (let i = 0; employeeArr.length>i; i++){ // gets the employeeArray and loops it to get the role
-        const role = employeeArr[i].getRole();
+        const role = employeeArr[i].getRole();// constructor function does not have role variable so it is getting role value from getRole function
 
 
         if (role === 'Manager'){ // if the role is Manager then push the Manager HTML chunk for manager
