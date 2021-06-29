@@ -35,8 +35,8 @@ const questions = [
         type: 'input',
         name: 'id',
         message: 'Please enter the employee id?',
-        validate: nameInput => {
-          if (nameInput) {
+        validate: idInput => {
+          if (idInput) {
             return true;
           } else {
             console.log('Please enter employee id!');
@@ -49,8 +49,8 @@ const questions = [
         type: 'input',
         name: 'email',
         message: 'Please enter the employee email?',
-        validate: nameInput => {
-          if (nameInput.includes("@") ){
+        validate: emailInput => {
+          if (emailInput.includes("@") ){
             return true;
           } else {
             console.log('Please enter a valid employee email!');
@@ -63,9 +63,9 @@ const questions = [
         type: 'input',
         name: 'officeNumber',
         message: 'Please enter office number?',
-        when:(input) => input.role ==='Manager', // this question pops up if the employee role is Manager
-        validate: nameInput => {
-          if (nameInput) {
+        when:(officeNumberInput) => officeNumberInput.role ==='Manager', // this question pops up if the employee role is Manager
+        validate: officeNumberInput => {
+          if (officeNumberInput) {
             return true;
           } else {
             console.log(' Please enter office number!');
@@ -77,9 +77,9 @@ const questions = [
         type: 'input',
         name: 'github',
         message: 'Please enter gitHub name?',
-        when:(input) => input.role ==='Engineer', // this question pops up if the employee role is Engineer
-        validate: nameInput => {
-          if (nameInput) {
+        when:(githubInput) => githubInput.role ==='Engineer', // this question pops up if the employee role is Engineer
+        validate: githubInput => {
+          if (githubInput) {
             return true;
           } else {
             console.log('Please enter gitHub name!');
@@ -91,9 +91,9 @@ const questions = [
         type: 'input',
         name: 'school',
         message: 'Please enter your school name?',
-        when:(input) => input.role ==='Intern', // this question pops up if the employee role is Intern
-        validate: nameInput => {
-          if (nameInput) {
+        when:(schoolInput) => schoolInput.role ==='Intern', // this question pops up if the employee role is Intern
+        validate: schoolInput => {
+          if (schoolInput) {
             return true;
           } else {
             console.log('Please enter your school name!');
